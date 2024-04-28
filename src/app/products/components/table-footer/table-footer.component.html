@@ -1,0 +1,13 @@
+<div class="paginator-row">
+  <p>{{ paginator }} resultados</p>
+  <select
+    name="paginator"
+    id="paginator"
+    [(ngModel)]="selectedValue"
+    (change)="paginatorOnChange()"
+  >
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="15">15</option>
+  </select>
+</div>

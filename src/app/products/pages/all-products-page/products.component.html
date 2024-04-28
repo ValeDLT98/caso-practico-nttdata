@@ -1,0 +1,33 @@
+<div class="products-body">
+  <input type="text" placeholder="Search" />
+  <br />
+  <br />
+
+  <div class="table-container">
+    <div class="table-wrapper">
+      <table class="product-table">
+        <thead>
+          <th>Titulo</th>
+          <th>Titulo</th>
+          <th>Titulo</th>
+          <th>Titulo</th>
+          <th>Titulo</th>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>
+              <img width="20%" src="{{ product.logo }}" alt="" />
+            </td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.date_release }}</td>
+            <td>{{ product.date_revision }}</td>
+            <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <app-table-footer></app-table-footer>
+</div>

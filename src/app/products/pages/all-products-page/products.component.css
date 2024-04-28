@@ -1,0 +1,31 @@
+.products-body {
+  background-color: #dfddf0;
+  padding: 15px;
+}
+
+.table-container {
+  background-color: #fff;
+  overflow-x: auto;
+  padding: 15px;
+}
+
+.product-table {
+  width: auto;
+  table-layout: fixed;
+}
+
+.product-table th,
+.product-table td {
+  text-align: center;
+  padding: 8px;
+  min-width: 100px;
+  white-space: nowrap;
+}
+
+.product-table th {
+  background-color: #d1ceec;
+}
+
+.product-table tbody tr td {
+  border-bottom: 1px solid #ccc;
+}
