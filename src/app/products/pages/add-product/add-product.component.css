@@ -1,0 +1,36 @@
+.form-container {
+  background-color: #fff;
+  padding: 15px;
+  width: 100%;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.form-row {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.form-group:last-child {
+  margin-right: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+span {
+  color: red;
+}
+
+.send-btn {
+  background-color: #e0e70e;
+  border: none;
+  padding: 5px;
+}

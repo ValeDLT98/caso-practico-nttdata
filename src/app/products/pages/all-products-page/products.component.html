@@ -1,5 +1,9 @@
 <div class="products-body">
-  <app-search-input (searchTerm)="searchProduct($event)"></app-search-input>
+  <div class="table-menu">
+    <app-search-input (searchTerm)="searchProduct($event)"></app-search-input>
+    <button class="add-button" routerLink="./agregar">Agregar</button>
+  </div>
+
   <div class="table-container">
     <div class="table-wrapper">
       <table class="product-table">

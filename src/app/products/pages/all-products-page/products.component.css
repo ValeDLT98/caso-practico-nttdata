@@ -1,5 +1,4 @@
 .products-body {
-  background-color: #dfddf0;
   padding: 15px;
 }
 
@@ -28,4 +27,18 @@
 
 .product-table tbody tr td {
   border-bottom: 1px solid #ccc;
+}
+
+.table-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-button {
+  background-color: #e0e70e;
+  margin: 15px 0 15px 0;
+  border-radius: 10%;
+  width: 10%;
+  cursor: pointer;
+  border: none;
 }

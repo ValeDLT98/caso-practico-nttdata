@@ -4,8 +4,14 @@ import { ProductsComponent } from './products/pages/all-products-page/products.c
 
 const routes: Routes = [
   {
-    path: 'productos',
+    path: '',
     component: ProductsComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'productos',
+    loadChildren: () =>
+      import('./products/products.module').then((m) => m.ProductsModule),
   },
   { path: '**', redirectTo: 'productos' },
 ];

@@ -1,0 +1,80 @@
+<div class="form-container">
+  <form [formGroup]="myForm" autocomplete="off" (ngSubmit)="onSave()">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="id">Id</label>
+        <input type="text" id="id" name="id" formControlName="id" />
+        <div>
+          <span *ngIf="isValidField('id')">{{ getFieldError("id") }}</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" formControlName="name" />
+        <div>
+          <span *ngIf="isValidField('name')">{{ getFieldError("name") }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="description">Descripción</label>
+        <input
+          type="text"
+          id="description"
+          name="description"
+          formControlName="description"
+        />
+        <div>
+          <span *ngIf="isValidField('description')">{{
+            getFieldError("description")
+          }}</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="logo">Logo</label>
+        <input type="text" id="logo" name="logo" formControlName="logo" />
+        <div>
+          <span *ngIf="isValidField('logo')">{{ getFieldError("logo") }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="date_release">Fecha liberación</label>
+        <input
+          type="date"
+          id="date_release"
+          name="date_release"
+          formControlName="date_release"
+        />
+        <div>
+          <span *ngIf="isValidField('date_release')">{{
+            getFieldError("date_release")
+          }}</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="date_revision">Fecha revisión</label>
+        <input
+          readonly
+          type="date"
+          id="date_revision"
+          name="date_revision"
+          formControlName="date_revision"
+        />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <button>Reiniciar</button>
+      </div>
+      <div class="form-group">
+        <button class="send-btn" [disabled]="validateForm()">Enviar</button>
+      </div>
+    </div>
+  </form>
+</div>

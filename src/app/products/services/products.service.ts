@@ -17,4 +17,10 @@ export class ProductsService {
       })
       .pipe(catchError(() => of([])));
   }
+
+  createProduct(product: Product) {
+    return this.http.post(`${environment.baseURL}/bp/products`, product, {
+      headers: { authorId: '1' },
+    });
+  }
 }

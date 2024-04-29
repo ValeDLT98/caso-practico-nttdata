@@ -3,6 +3,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductsModule } from './products/products.module';
+import { Router } from '@angular/router';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
