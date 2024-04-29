@@ -77,4 +77,20 @@ describe('ProductsComponent', () => {
 
     expect(component.filteredProducts.length).toBe(1);
   });
+
+  it('should show products by quantity', () => {
+    let quantity = 1;
+
+    component.products = MOCK_RESULT;
+
+    component.getSelectNumber(quantity);
+
+    expect(component.filteredProducts.length).toBe(1);
+
+    quantity = 5;
+
+    component.getSelectNumber(quantity);
+
+    expect(component.filteredProducts.length).toBe(MOCK_RESULT.length);
+  });
 });

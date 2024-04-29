@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-table-footer',
@@ -6,10 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './table-footer.component.css',
 })
 export class TableFooterComponent {
-  public paginator: string = '5';
+  @Output()
+  public valueEmitter: EventEmitter<number> = new EventEmitter();
+
+  public value: string = '5';
   public selectedValue: string = '5';
 
   paginatorOnChange() {
-    this.paginator = this.selectedValue;
+    this.value = this.selectedValue;
+    this.valueEmitter.emit(parseInt(this.value));
   }
 }
