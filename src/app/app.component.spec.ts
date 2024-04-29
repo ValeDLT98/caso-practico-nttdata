@@ -1,16 +1,14 @@
 import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { ProductsModule } from './products/products.module';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+      imports: [AppRoutingModule, ProductsModule, FormsModule],
+      declarations: [AppComponent],
     }).compileComponents();
   });
 
@@ -20,16 +18,18 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'caso-practico-nttdata'`, () => {
+  it(`should have as title 'BANCO'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('caso-practico-nttdata');
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('h3')?.textContent).toContain('BANCO');
   });
 
-  it('should render title', () => {
+  it('should render icon', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, caso-practico-nttdata');
+    expect(compiled.querySelector('i')?.className).toContain(
+      'fa-solid fa-money-bills'
+    );
   });
 });
