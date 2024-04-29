@@ -9,6 +9,7 @@ import { Product } from '../../interfaces/product.interface';
 import { ProductsService } from '../../services/products.service';
 import { TableFooterComponent } from '../../components/table-footer/table-footer.component';
 import { FormsModule } from '@angular/forms';
+import { of } from 'rxjs';
 
 describe('ProductsComponent', () => {
   let component: ProductsComponent;
@@ -23,6 +24,14 @@ describe('ProductsComponent', () => {
       name: 'nameEj',
       description: 'descriptionEj',
       logo: 'src',
+      date_release: new Date(),
+      date_revision: new Date(),
+    },
+    {
+      id: '1',
+      name: 'nameEj2',
+      description: 'descriptionEj2',
+      logo: 'src2',
       date_release: new Date(),
       date_revision: new Date(),
     },
@@ -49,5 +58,23 @@ describe('ProductsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should initialize products on ngOnInit', () => {
+    jest.spyOn(productsService, 'getProducts').mockReturnValue(of(MOCK_RESULT));
+
+    component.ngOnInit();
+
+    expect(component.products).toEqual(MOCK_RESULT);
+  });
+
+  it('should show filtered products', () => {
+    const searchTerm = 'nameEj2';
+
+    component.products = MOCK_RESULT;
+
+    component.searchProduct(searchTerm);
+
+    expect(component.filteredProducts.length).toBe(1);
   });
 });

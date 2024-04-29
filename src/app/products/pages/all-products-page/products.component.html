@@ -1,8 +1,5 @@
 <div class="products-body">
-  <input type="text" placeholder="Search" />
-  <br />
-  <br />
-
+  <app-search-input (searchTerm)="searchProduct($event)"></app-search-input>
   <div class="table-container">
     <div class="table-wrapper">
       <table class="product-table">
@@ -15,14 +12,14 @@
         </thead>
 
         <tbody>
-          <tr *ngFor="let product of products">
+          <tr *ngFor="let product of filteredProducts">
             <td>
               <img width="20%" src="{{ product.logo }}" alt="" />
             </td>
             <td>{{ product.name }}</td>
             <td>{{ product.description }}</td>
-            <td>{{ product.date_release }}</td>
-            <td>{{ product.date_revision }}</td>
+            <td>{{ product.date_release | date : "YYYY-MM-dd" }}</td>
+            <td>{{ product.date_revision | date : "YYYY-MM-dd" }}</td>
             <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
           </tr>
         </tbody>

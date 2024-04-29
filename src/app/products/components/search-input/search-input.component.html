@@ -1,1 +1,7 @@
-<p>search-input works!</p>
+<input
+  class="input-search"
+  type="text"
+  placeholder="Search"
+  [(ngModel)]="inputValue"
+  (keyup)="inputChange()"
+/>
